@@ -50,20 +50,14 @@ class Program
             Console.WriteLine("Better luck next time!");
         }
 
-         // For Parts 1 and 2, where the user specified the number...
-        // Console.Write("What is the magic number? ");
-        // int magicNumber = int.Parse(Console.ReadLine());
-        
-        // For Part 3, where we use a random number
         Random randomGenerator = new Random();
         int magicNumber = randomGenerator.Next(1, 101);
 
         int guess = -1;
 
-        // We could also use a do-while loop here...
         while (guess != magicNumber)
         {
-            Console.Write("What is your guess? ");
+            Console.Write("Lets play a gamr of guessing numbers, you can only input a number, What is your guess? ");
             guess = int.Parse(Console.ReadLine());
 
             if (magicNumber > guess)
@@ -82,7 +76,6 @@ class Program
 
          List<int> numbers = new List<int>();
         
-        // Please note we could use a do-while loop here instead
         int useNumber = -1;
         while (useNumber != 0)
         {
@@ -91,14 +84,12 @@ class Program
             string userResponse = Console.ReadLine();
             useNumber = int.Parse(userResponse);
             
-            // Only add the number to the list if it is not 0
             if (useNumber != 0)
             {
                 numbers.Add(useNumber);
             }
         }
 
-        // Part 1: Compute the sum
         int sum = 0;
         foreach (int number in numbers)
         {
@@ -107,18 +98,9 @@ class Program
 
         Console.WriteLine($"The sum is: {sum}");
 
-        // Part 2: Compute the average
-        // Notice that we first cast the sum variable to be a float. Otherwise, because
-        // both the sum and the count are integers, the computer will do integer division
-        // and I will not get a decimal value (even though it puts the result into a float variable).
-
-        // By making one of the variables a float first, the computer knows that it has to
-        // do the floating point division, and we get the decimal value that we expect.
         float average = ((float)sum) / numbers.Count;
         Console.WriteLine($"The average is: {average}");
 
-        // Part 3: Find the max
-        // There are several ways to do this, such as sorting the list
         
         int max = numbers[0];
 
@@ -126,7 +108,6 @@ class Program
         {
             if (number > max)
             {
-                // if this number is greater than the max, we have found the new max!
                 max = number;
             }
         }
